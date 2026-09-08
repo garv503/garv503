@@ -8,7 +8,12 @@
 
 <h3><code>garv503@github ~ $ whoami</code></h3>
 
-<img src="./info-card.svg?v=2" width="620" alt="About Garv Bhargava" />
+<table>
+<tr>
+<td valign="top"><img src="./ascii-portrait.svg?v=1" width="430" alt="ASCII portrait" /></td>
+<td valign="top"><img src="./info-card.svg?v=2" width="430" alt="About Garv Bhargava" /></td>
+</tr>
+</table>
 
 <br><br>
 
@@ -23,6 +28,6 @@
 
 <div align="center">
 
-<sub>The heatmap and card are SVGs generated in this repo and refreshed daily by a GitHub Action &#8212; no third-party image services.</sub>
+<sub>Portrait, card and heatmap are SVGs generated in this repo &#8212; the heatmap refreshes daily by GitHub Action. No third-party image services.</sub>
 
 </div>
