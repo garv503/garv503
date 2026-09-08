@@ -10,7 +10,7 @@
 
 <table>
 <tr>
-<td valign="top"><img src="./ascii-portrait.svg?v=1" width="430" alt="ASCII portrait" /></td>
+<td valign="top"><img src="./ascii-portrait.svg?v=3" width="430" alt="ASCII portrait" /></td>
 <td valign="top"><img src="./info-card.svg?v=2" width="430" alt="About Garv Bhargava" /></td>
 </tr>
 </table>
