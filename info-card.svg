@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="318" viewBox="0 0 620 318" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="About garv503">
+<style>  .r{opacity:0;animation:in .42s ease-out forwards}  @keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}  @media (prefers-reduced-motion:reduce){.r{animation:none;opacity:1;transform:none}}</style>
+<rect width="620" height="318" rx="10" fill="#0d1117"/>
+<rect x="0.5" y="0.5" width="619" height="317" rx="10" fill="none" stroke="#30363d"/>
+<circle cx="30" cy="26" r="6" fill="#ff5f57"/>
+<circle cx="48" cy="26" r="6" fill="#febc2e"/>
+<circle cx="66" cy="26" r="6" fill="#28c840"/>
+<text class="r" x="92" y="31" font-size="13" fill="#7d8590">garv503@github ~ neofetch</text>
+<text class="r" x="30" y="66" font-size="15" fill="#39d353" style="animation-delay:.1s">garv503@github</text>
+<line class="r" x1="30" y1="76" x2="590" y2="76" stroke="#30363d" style="animation-delay:.14s"/>
+<text class="r" x="30" y="92" font-size="13" fill="#69f0a0" style="animation-delay:0.20s">Name</text>
+<text class="r" x="97" y="92" font-size="13" fill="#c9d1d9" style="animation-delay:0.20s">Garv Bhargava</text>
+<text class="r" x="30" y="122" font-size="13" fill="#69f0a0" style="animation-delay:0.29s">Now</text>
+<text class="r" x="97" y="122" font-size="13" fill="#c9d1d9" style="animation-delay:0.29s">SpeakQL</text>
+<text class="r" x="30" y="152" font-size="13" fill="#69f0a0" style="animation-delay:0.38s">Prev</text>
+<text class="r" x="97" y="152" font-size="13" fill="#c9d1d9" style="animation-delay:0.38s">Foresight / Inkwell / Shivam Garments</text>
+<text class="r" x="30" y="182" font-size="13" fill="#69f0a0" style="animation-delay:0.47s">Stack</text>
+<text class="r" x="97" y="182" font-size="13" fill="#c9d1d9" style="animation-delay:0.47s">Python / SQL / Flask / React / Docker</text>
+<text class="r" x="30" y="212" font-size="13" fill="#69f0a0" style="animation-delay:0.56s">Focus</text>
+<text class="r" x="97" y="212" font-size="13" fill="#c9d1d9" style="animation-delay:0.56s">Backend and data-heavy interfaces</text>
+<text class="r" x="30" y="242" font-size="13" fill="#69f0a0" style="animation-delay:0.65s">Habit</text>
+<text class="r" x="97" y="242" font-size="13" fill="#c9d1d9" style="animation-delay:0.65s">Ships coursework like production</text>
+<rect class="r" x="30" y="292" width="15" height="10" rx="2" fill="#161b22" style="animation-delay:0.74s"/>
+<rect class="r" x="50" y="292" width="15" height="10" rx="2" fill="#0e4429" style="animation-delay:0.78s"/>
+<rect class="r" x="70" y="292" width="15" height="10" rx="2" fill="#006d32" style="animation-delay:0.82s"/>
+<rect class="r" x="90" y="292" width="15" height="10" rx="2" fill="#26a641" style="animation-delay:0.86s"/>
+<rect class="r" x="110" y="292" width="15" height="10" rx="2" fill="#39d353" style="animation-delay:0.90s"/>
+<rect class="r" x="130" y="292" width="15" height="10" rx="2" fill="#69f0a0" style="animation-delay:0.94s"/>
+</svg>
