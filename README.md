@@ -2,13 +2,13 @@
 
 <h3><code>garv503@github ~ $ ./contributions.sh</code></h3>
 
-<img src="./contrib-heatmap.svg" width="860" alt="Contribution heatmap" />
+<img src="./contrib-heatmap.svg?v=2" width="860" alt="Contribution heatmap" />
 
 <br><br>
 
 <h3><code>garv503@github ~ $ whoami</code></h3>
 
-<img src="./info-card.svg" width="620" alt="About Garv Bhargava" />
+<img src="./info-card.svg?v=2" width="620" alt="About Garv Bhargava" />
 
 <br><br>
 
