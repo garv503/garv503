@@ -1,61 +1,28 @@
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=6C63FF&center=true&vCenter=true&width=520&lines=Hi%2C+I%27m+Garv;Full-Stack+Developer;Always+shipping+something" alt="Typing animation" />
-</h1>
+<div align="center">
 
-<p align="center">
-  <a href="https://github.com/garv503?tab=followers">
-    <img src="https://img.shields.io/github/followers/garv503?label=Followers&style=for-the-badge&color=6C63FF" alt="Followers" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=garv503&style=for-the-badge&color=6C63FF" alt="Profile views" />
-</p>
+<h3><code>garv503@github ~ $ ./contributions.sh</code></h3>
 
----
+<img src="./contrib-heatmap.svg" width="860" alt="Contribution heatmap" />
 
-### About me
+<br><br>
 
-- Currently working on **SpeakQL**
-- Learning **new things, constantly**
-- Ask me about **Python, SQL and backend work**
-- Reach me via the links below
+<h3><code>garv503@github ~ $ whoami</code></h3>
 
----
+<img src="./info-card.svg" width="620" alt="About Garv Bhargava" />
 
-### Tech stack
+<br><br>
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,docker,postgres,tailwind,git&theme=dark" alt="Tech stack icons" />
-</p>
+<h3><code>garv503@github ~ $ ls ~/projects</code></h3>
 
----
+</div>
 
-### Projects
+| Project | What it is |
+| --- | --- |
+| **[College-Projects](https://github.com/garv503/College-Projects)** | Foresight (Flask + MySQL academic analytics), Inkwell (React + Express notes app) and Shivam Garments (Python billing), each on its own branch |
+| **[SpeakQL](https://github.com/garv503/SpeakQL)** | In progress |
 
-**[College-Projects](https://github.com/garv503/College-Projects)** — three coursework builds, each on its own branch: Foresight (Flask + MySQL academic analytics), Inkwell (React + Express notes app) and Shivam Garments (Python billing system).
+<div align="center">
 
-<p>
-  <img src="https://img.shields.io/github/last-commit/garv503/College-Projects?style=for-the-badge&color=6C63FF" alt="Last commit" />
-  <img src="https://img.shields.io/github/languages/top/garv503/College-Projects?style=for-the-badge&color=6C63FF" alt="Top language" />
-</p>
+<sub>The heatmap and card are SVGs generated in this repo and refreshed daily by a GitHub Action &#8212; no third-party image services.</sub>
 
-**[SpeakQL](https://github.com/garv503/SpeakQL)** — in progress.
-
-<p>
-  <img src="https://img.shields.io/github/last-commit/garv503/SpeakQL?style=for-the-badge&color=6C63FF" alt="Last commit" />
-  <img src="https://img.shields.io/github/languages/top/garv503/SpeakQL?style=for-the-badge&color=6C63FF" alt="Top language" />
-</p>
-
----
-
-### Activity
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=garv503&theme=tokyonight&hide_border=true" alt="Streak stats" />
-</p>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/garv503/garv503/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/garv503/garv503/output/snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/garv503/garv503/output/snake.svg" />
-</picture>
-
----
+</div>
