@@ -1,8 +1,10 @@
 """Render data/contributions.json as a self-contained animated SVG.
 
-All motion lives inside the file as CSS keyframes: GitHub strips <script>
-and external CSS from READMEs but does play animations embedded in an SVG
-loaded through <img>. The reveal runs once on load and freezes.
+Motion is SMIL, embedded in the file. GitHub strips <script> and external
+CSS from READMEs, and CSS keyframes do not run in an SVG loaded through
+<img> either -- SMIL does. Every element keeps its default opacity of 1 and
+each <animate> carries its own delay, so a renderer that ignores SMIL shows
+the finished art instead of a blank panel. The reveal runs once and freezes.
 """
 
 import json
@@ -24,6 +26,27 @@ LABEL_W = 30
 FG, DIM, BG = "#c9d1d9", "#7d8590", "#0d1117"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def reveal(delay, fade=0.3):
+    """A SMIL fade-in that carries its own delay.
+
+    Elements keep their default opacity of 1, so a renderer that ignores
+    SMIL shows the finished art rather than a blank panel. When SMIL does
+    run, the element starts hidden and appears at the given delay.
+    """
+    if STATIC:
+        return ""
+    if delay <= 0:
+        return (
+            f'<animate attributeName="opacity" values="0;1" dur="{fade}s" '
+            f'fill="freeze"/>'
+        )
+    total = delay + fade
+    return (
+        f'<animate attributeName="opacity" values="0;0;1" '
+        f'keyTimes="0;{delay / total:.4f};1" dur="{total:.3f}s" fill="freeze"/>'
+    )
 
 
 def build_weeks(days):
@@ -68,41 +91,31 @@ def render(data):
         f'viewBox="0 0 {width} {height}" font-family="ui-monospace,SFMono-Regular,'
         f'Menlo,Consolas,monospace" role="img" '
         f'aria-label="{data["total"]} contributions in the last year">',
-        "<style>",
-        # STATIC=1 emits a frozen frame for rasterizers with no CSS animation.
-        "  .c,.t{opacity:1}" if STATIC else
-        "  .c{opacity:0;animation:pop .32s ease-out forwards}"
-        "  @keyframes pop{from{opacity:0;transform:translateY(-6px)}"
-        "to{opacity:1;transform:translateY(0)}}"
-        "  .t{opacity:0;animation:fade .5s ease-out forwards}"
-        "  @keyframes fade{to{opacity:1}}"
-        "  @media (prefers-reduced-motion:reduce){"
-        ".c,.t{animation:none;opacity:1;transform:none}}",
-        "</style>",
         f'<rect width="{width}" height="{height}" rx="10" fill="{BG}"/>',
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="10" '
         f'fill="none" stroke="#30363d"/>',
     ]
 
+    # Title bar, styled like a terminal window.
     for i, colour in enumerate(("#ff5f57", "#febc2e", "#28c840")):
         parts.append(f'<circle cx="{PAD_X + i * 18}" cy="26" r="6" fill="{colour}"/>')
     parts.append(
-        f'<text class="t" x="{PAD_X + 62}" y="31" font-size="13" fill="{DIM}">'
-        f'{data["username"]}@github ~ contributions</text>'
+        f'<text x="{PAD_X + 62}" y="31" font-size="13" fill="{DIM}">'
+        f'{reveal(0.05)}{data["username"]}@github ~ contributions</text>'
     )
 
     grid_x = PAD_X + LABEL_W
 
     for index, label in month_labels(weeks):
         parts.append(
-            f'<text class="t" x="{grid_x + index * step}" y="{TOP - 8}" '
-            f'font-size="11" fill="{DIM}" style="animation-delay:.15s">{label}</text>'
+            f'<text x="{grid_x + index * step}" y="{TOP - 8}" '
+            f'font-size="11" fill="{DIM}">{reveal(0.15)}{label}</text>'
         )
 
     for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
         parts.append(
-            f'<text class="t" x="{PAD_X}" y="{TOP + row * step + 11}" font-size="10" '
-            f'fill="{DIM}" style="animation-delay:.15s">{label}</text>'
+            f'<text x="{PAD_X}" y="{TOP + row * step + 11}" font-size="10" '
+            f'fill="{DIM}">{reveal(0.15)}{label}</text>'
         )
 
     for col, column in enumerate(weeks):
@@ -114,38 +127,38 @@ def render(data):
                 level = 5
             delay = (col + row) * 0.012
             parts.append(
-                f'<rect class="c" x="{grid_x + col * step}" y="{TOP + row * step}" '
-                f'width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{PALETTE[level]}" '
-                f'style="animation-delay:{delay:.3f}s">'
+                f'<rect x="{grid_x + col * step}" y="{TOP + row * step}" '
+                f'width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{PALETTE[level]}">'
+                f'{reveal(delay)}'
                 f'<title>{day["count"]} on {day["date"]}</title></rect>'
             )
 
     footer = TOP + 7 * step + 18
     parts.append(
-        f'<text class="t" x="{PAD_X}" y="{footer + 12}" font-size="12" fill="{FG}" '
-        f'style="animation-delay:1s">{data["total"]:,} contributions in the last year'
+        f'<text x="{PAD_X}" y="{footer + 12}" font-size="12" fill="{FG}">'
+        f'{reveal(1.0)}{data["total"]:,} contributions in the last year'
         f'</text>'
     )
     parts.append(
-        f'<text class="t" x="{PAD_X}" y="{footer + 31}" font-size="11" fill="{DIM}" '
-        f'style="animation-delay:1.1s">current streak {data["current_streak"]}d &#183; '
+        f'<text x="{PAD_X}" y="{footer + 31}" font-size="11" fill="{DIM}">'
+        f'{reveal(1.1)}current streak {data["current_streak"]}d &#183; '
         f'longest {data["longest_streak"]}d &#183; best day {data["best_day"]["count"]} &#183; '
         f'{data["active_days"]} active days</text>'
     )
 
     legend_x = width - PAD_X - 6 * 16 - 62
     parts.append(
-        f'<text class="t" x="{legend_x}" y="{footer + 12}" font-size="11" fill="{DIM}" '
-        f'style="animation-delay:1s">Less</text>'
+        f'<text x="{legend_x}" y="{footer + 12}" font-size="11" fill="{DIM}">'
+        f'{reveal(1.0)}Less</text>'
     )
     for i, colour in enumerate(PALETTE):
         parts.append(
-            f'<rect class="t" x="{legend_x + 32 + i * 16}" y="{footer + 2}" width="12" '
-            f'height="12" rx="3" fill="{colour}" style="animation-delay:{1 + i * .04:.2f}s"/>'
+            f'<rect x="{legend_x + 32 + i * 16}" y="{footer + 2}" width="12" '
+            f'height="12" rx="3" fill="{colour}">{reveal(1 + i * .04)}</rect>'
         )
     parts.append(
-        f'<text class="t" x="{legend_x + 32 + 6 * 16 + 6}" y="{footer + 12}" '
-        f'font-size="11" fill="{DIM}" style="animation-delay:1.3s">More</text>'
+        f'<text x="{legend_x + 32 + 6 * 16 + 6}" y="{footer + 12}" '
+        f'font-size="11" fill="{DIM}">{reveal(1.3)}More</text>'
     )
 
     parts.append("</svg>")
