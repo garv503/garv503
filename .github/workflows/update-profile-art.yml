@@ -13,6 +13,11 @@ permissions:
 jobs:
   art:
     runs-on: ubuntu-latest
+    env:
+      # Render frozen frames. SMIL animation inside an SVG that GitHub
+      # serves through <img> does not play reliably -- rows intermittently
+      # stay at their starting opacity and the panel shows up empty.
+      STATIC: "1"
     steps:
       - uses: actions/checkout@v4
 
