@@ -2,7 +2,7 @@
 
 <h3><code>garv503@github ~ $ ./contributions.sh</code></h3>
 
-<img src="./contrib-heatmap.svg?v=2" width="860" alt="Contribution heatmap" />
+<img src="./contrib-heatmap.svg?v=4" width="860" alt="Contribution heatmap" />
 
 <br><br>
 
@@ -11,7 +11,7 @@
 <table>
 <tr>
 <td valign="top"><img src="./ascii-portrait.svg?v=3" width="430" alt="ASCII portrait" /></td>
-<td valign="top"><img src="./info-card.svg?v=2" width="430" alt="About Garv Bhargava" /></td>
+<td valign="top"><img src="./info-card.svg?v=4" width="430" alt="About Garv Bhargava" /></td>
 </tr>
 </table>
 
