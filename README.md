@@ -1,12 +1,12 @@
 <div align="center">
 
-<h3><code>garv503@github ~ $ ./contributions.sh</code></h3>
+<h3><code>garvbhargava@github ~ $ ./contributions.sh</code></h3>
 
 <img src="./contrib-heatmap.svg?v=4" width="860" alt="Contribution heatmap" />
 
 <br><br>
 
-<h3><code>garv503@github ~ $ whoami</code></h3>
+<h3><code>garvbhargava@github ~ $ whoami</code></h3>
 
 <table>
 <tr>
@@ -17,7 +17,7 @@
 
 <br><br>
 
-<h3><code>garv503@github ~ $ ls ~/projects</code></h3>
+<h3><code>garvbhargava@github ~ $ ls ~/projects</code></h3>
 
 </div>
 
